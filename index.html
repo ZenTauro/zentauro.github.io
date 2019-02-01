@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2019-02-01 Fri 13:38 -->
+<!-- 2019-02-01 Fri 22:43 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Intro Hacking Binarios en Linux</title>
@@ -193,12 +193,12 @@
   .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
-<link rel="stylesheet" type="text/css" href="styles/readtheorg/css/htmlize.css"/>
-<link rel="stylesheet" type="text/css" href="styles/readtheorg/css/readtheorg.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/styles/readtheorg/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/styles/readtheorg/css/readtheorg.css"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="styles/lib/js/jquery.stickytableheaders.min.js"></script>
-<script type="text/javascript" src="styles/readtheorg/js/readtheorg.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/readtheorg/js/readtheorg.js"></script>
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -250,8 +250,12 @@ for the JavaScript code in this tag.
 <div id="content">
 <h1 class="title">Intro Hacking Binarios en Linux</h1>
 
-<div id="outline-container-org108a74d" class="outline-2">
-<h2 id="org108a74d"><span class="section-number-2">1</span> Introducción</h2>
+<div class="figure">
+<p><img src="https://www.fwhibbit.es/wp-content/uploads/2017/11/101.jpg" alt="101.jpg" />
+</p>
+</div>
+<div id="outline-container-org124b5fb" class="outline-2">
+<h2 id="org124b5fb"><span class="section-number-2">1</span> Introducción</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 El cursillo consistirá en dos sesiones, una de introducción mas
@@ -278,8 +282,8 @@ como <a href="https://github.com/pwndbg/pwndbg">pwndbg</a> para ahorrar tiempo y
 </div>
 </div>
 
-<div id="outline-container-org0a25d86" class="outline-2">
-<h2 id="org0a25d86"><span class="section-number-2">2</span> Requisitos previos</h2>
+<div id="outline-container-orgbaccaa7" class="outline-2">
+<h2 id="orgbaccaa7"><span class="section-number-2">2</span> Requisitos previos</h2>
 <div class="outline-text-2" id="text-2">
 <ul class="org-ul">
 <li>Saber un poco de programación en C</li>
@@ -289,12 +293,12 @@ como <a href="https://github.com/pwndbg/pwndbg">pwndbg</a> para ahorrar tiempo y
 </div>
 </div>
 
-<div id="outline-container-org8a0b50e" class="outline-2">
-<h2 id="org8a0b50e"><span class="section-number-2">3</span> Instalación de las herramientas</h2>
+<div id="outline-container-orga13ec2f" class="outline-2">
+<h2 id="orga13ec2f"><span class="section-number-2">3</span> Instalación de las herramientas</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-org2f3fe98" class="outline-3">
-<h3 id="org2f3fe98"><span class="section-number-3">3.1</span> Herramientas de desarrollo</h3>
+<div id="outline-container-orged95ea8" class="outline-3">
+<h3 id="orged95ea8"><span class="section-number-3">3.1</span> Herramientas de desarrollo</h3>
 <div class="outline-text-3" id="text-3-1">
 <div class="org-src-container">
 <pre class="src src-sh">sudo apt update
@@ -305,8 +309,8 @@ sudo apt install build-essential git
 </div>
 </div>
 
-<div id="outline-container-org7b1921a" class="outline-3">
-<h3 id="org7b1921a"><span class="section-number-3">3.2</span> Pwndbg</h3>
+<div id="outline-container-org4b5579f" class="outline-3">
+<h3 id="org4b5579f"><span class="section-number-3">3.2</span> Pwndbg</h3>
 <div class="outline-text-3" id="text-3-2">
 <div class="org-src-container">
 <pre class="src src-sh">git clone https://github.com/pwndbg/pwndbg.git
@@ -318,14 +322,9 @@ sudo apt install build-essential git
 </div>
 </div>
 
-<div id="outline-container-org7b477c7" class="outline-3">
-<h3 id="org7b477c7"><span class="section-number-3">3.3</span> Radare2</h3>
+<div id="outline-container-org5932512" class="outline-3">
+<h3 id="org5932512"><span class="section-number-3">3.3</span> Radare2</h3>
 <div class="outline-text-3" id="text-3-3">
-
-<div class="figure">
-<p><img src="https://www.fwhibbit.es/wp-content/uploads/2017/11/101.jpg" alt="101.jpg" />
-</p>
-</div>
 <div class="org-src-container">
 <pre class="src src-sh">git clone https://github.com/radare/radare2.git
 <span style="color: #F92672;">cd</span> radare2
@@ -339,7 +338,7 @@ python ./sys/meson.py --prefix=/usr --shared --install
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Pedro Gomez</p>
-<p class="date">Created: 2019-02-01 Fri 13:38</p>
+<p class="date">Created: 2019-02-01 Fri 22:43</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

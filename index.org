@@ -1,0 +1,51 @@
+#+TITLE: Intro Hacking Binarios en Linux
+#+AUTHOR: Pedro Gomez
+#+OPTIONS: toc:nil
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/setup/theme-readtheorg.setup
+  [[https://www.fwhibbit.es/wp-content/uploads/2017/11/101.jpg]]
+* Introducción
+  El cursillo consistirá en dos sesiones, una de introducción mas
+  teórica y otra de un taller donde utilizaremos los conocimientos
+  aprendidos.
+
+  Se explicarán a grandes rasgos como funcionan los archivos ejecutables
+  en Linux, las distintas secciones que tienen y como se distribuyen
+  en memoria. Una vez explicado se procederá a establecer una relación
+  entre el código en C y el lenguaje de ensamblador para poder ver
+  las convenciones que existen y más tarde poder aprovecharnos de
+  algunas de las vulnerabilidades más comunes.
+
+  Se utilizarán las herramientas de software libre radare2 y pwndbg
+  para la inspección y "depuración" de los binarios. Se recomienda
+  tener una distro basada en Debian, como Ubuntu, con el paquete
+  build-essential instalado. También es deseable tener tanto [[https://rada.re/r/][radare2]]
+  como [[https://github.com/pwndbg/pwndbg][pwndbg]] para ahorrar tiempo y empezar el taller lo antes posible.
+
+* Requisitos previos
+  - Saber un poco de programación en C
+  - Tener un Linux instalado (ya sea en maquina virtual o disco)
+  - Ganas de aprender
+
+* Instalación de las herramientas
+** Herramientas de desarrollo
+  #+BEGIN_SRC sh
+    sudo apt update
+    sudo apt upgrade
+    sudo apt install build-essential git
+  #+END_SRC
+
+** Pwndbg
+  #+BEGIN_SRC sh
+    git clone https://github.com/pwndbg/pwndbg.git
+    cd pwndbg
+    ./setup.sh
+    cd ..
+  #+END_SRC
+
+** Radare2
+  #+BEGIN_SRC sh
+    git clone https://github.com/radare/radare2.git
+    cd radare2
+    python ./sys/meson.py --prefix=/usr --shared --install
+    cd ..
+  #+END_SRC
