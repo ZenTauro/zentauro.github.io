@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2019-02-01 Fri 22:43 -->
+<!-- 2019-02-01 Fri 23:34 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Intro Hacking Binarios en Linux</title>
@@ -249,13 +249,29 @@ for the JavaScript code in this tag.
 <body>
 <div id="content">
 <h1 class="title">Intro Hacking Binarios en Linux</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgf43ca29">1. Introducción</a></li>
+<li><a href="#org8c8f504">2. Requisitos previos</a></li>
+<li><a href="#org83c8de3">3. Instalación de las herramientas</a>
+<ul>
+<li><a href="#org169ce39">3.1. Herramientas de desarrollo</a></li>
+<li><a href="#org791bc4f">3.2. Pwndbg</a></li>
+<li><a href="#org43adfed">3.3. Radare2</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
 
 <div class="figure">
-<p><img src="https://www.fwhibbit.es/wp-content/uploads/2017/11/101.jpg" alt="101.jpg" />
+<p><img src="./img.png" alt="img.png" />
 </p>
 </div>
-<div id="outline-container-org124b5fb" class="outline-2">
-<h2 id="org124b5fb"><span class="section-number-2">1</span> Introducción</h2>
+<div id="outline-container-orgf43ca29" class="outline-2">
+<h2 id="orgf43ca29"><span class="section-number-2">1</span> Introducción</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 El cursillo consistirá en dos sesiones, una de introducción mas
@@ -282,8 +298,8 @@ como <a href="https://github.com/pwndbg/pwndbg">pwndbg</a> para ahorrar tiempo y
 </div>
 </div>
 
-<div id="outline-container-orgbaccaa7" class="outline-2">
-<h2 id="orgbaccaa7"><span class="section-number-2">2</span> Requisitos previos</h2>
+<div id="outline-container-org8c8f504" class="outline-2">
+<h2 id="org8c8f504"><span class="section-number-2">2</span> Requisitos previos</h2>
 <div class="outline-text-2" id="text-2">
 <ul class="org-ul">
 <li>Saber un poco de programación en C</li>
@@ -293,12 +309,12 @@ como <a href="https://github.com/pwndbg/pwndbg">pwndbg</a> para ahorrar tiempo y
 </div>
 </div>
 
-<div id="outline-container-orga13ec2f" class="outline-2">
-<h2 id="orga13ec2f"><span class="section-number-2">3</span> Instalación de las herramientas</h2>
+<div id="outline-container-org83c8de3" class="outline-2">
+<h2 id="org83c8de3"><span class="section-number-2">3</span> Instalación de las herramientas</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-orged95ea8" class="outline-3">
-<h3 id="orged95ea8"><span class="section-number-3">3.1</span> Herramientas de desarrollo</h3>
+<div id="outline-container-org169ce39" class="outline-3">
+<h3 id="org169ce39"><span class="section-number-3">3.1</span> Herramientas de desarrollo</h3>
 <div class="outline-text-3" id="text-3-1">
 <div class="org-src-container">
 <pre class="src src-sh">sudo apt update
@@ -309,8 +325,8 @@ sudo apt install build-essential git
 </div>
 </div>
 
-<div id="outline-container-org4b5579f" class="outline-3">
-<h3 id="org4b5579f"><span class="section-number-3">3.2</span> Pwndbg</h3>
+<div id="outline-container-org791bc4f" class="outline-3">
+<h3 id="org791bc4f"><span class="section-number-3">3.2</span> Pwndbg</h3>
 <div class="outline-text-3" id="text-3-2">
 <div class="org-src-container">
 <pre class="src src-sh">git clone https://github.com/pwndbg/pwndbg.git
@@ -322,8 +338,8 @@ sudo apt install build-essential git
 </div>
 </div>
 
-<div id="outline-container-org5932512" class="outline-3">
-<h3 id="org5932512"><span class="section-number-3">3.3</span> Radare2</h3>
+<div id="outline-container-org43adfed" class="outline-3">
+<h3 id="org43adfed"><span class="section-number-3">3.3</span> Radare2</h3>
 <div class="outline-text-3" id="text-3-3">
 <div class="org-src-container">
 <pre class="src src-sh">git clone https://github.com/radare/radare2.git
@@ -338,7 +354,7 @@ python ./sys/meson.py --prefix=/usr --shared --install
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Pedro Gomez</p>
-<p class="date">Created: 2019-02-01 Fri 22:43</p>
+<p class="date">Created: 2019-02-01 Fri 23:34</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

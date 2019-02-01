@@ -1,8 +1,8 @@
 #+TITLE: Intro Hacking Binarios en Linux
 #+AUTHOR: Pedro Gomez
-#+OPTIONS: toc:nil
 #+SETUPFILE: https://fniessen.github.io/org-html-themes/setup/theme-readtheorg.setup
-  [[https://www.fwhibbit.es/wp-content/uploads/2017/11/101.jpg]]
+
+[[./img.png]]
 * Introducción
   El cursillo consistirá en dos sesiones, una de introducción mas
   teórica y otra de un taller donde utilizaremos los conocimientos
