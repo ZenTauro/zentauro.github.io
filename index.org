@@ -3,6 +3,13 @@
 #+SETUPFILE: https://fniessen.github.io/org-html-themes/setup/theme-readtheorg.setup
 
 [[./img.png]]
+* Sesiones
+ | Dia                    | Contenido | Mañana  | Tarde   |
+ |------------------------+-----------+---------+---------|
+ | Martes 12 Febrero 2019 | Intro     | 12 - 14 | 15 - 17 |
+ | Martes 19 Febrero 2019 | Taller    | 12 - 14 | 15 - 17 |
+
+
 * Introducción
   El cursillo consistirá en dos sesiones, una de introducción mas
   teórica y otra de un taller donde utilizaremos los conocimientos
