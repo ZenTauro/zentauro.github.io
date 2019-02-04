@@ -4,10 +4,11 @@
 
 [[./img.png]]
 * Sesiones
- | Dia                    | Contenido | Mañana  | Tarde   |
- |------------------------+-----------+---------+---------|
- | Martes 12 Febrero 2019 | Intro     | 12 - 14 | 15 - 17 |
- | Martes 19 Febrero 2019 | Taller    | 12 - 14 | 15 - 17 |
+  Inscripciones en Delegación
+ | Contenido | Día                    | Mañana  | Tarde   |
+ |-----------+------------------------+---------+---------|
+ | Intro     | Martes 12 Febrero 2019 | 12 - 14 | 15 - 17 |
+ | Taller    | Martes 19 Febrero 2019 | 12 - 14 | 15 - 17 |
 
 
 * Introducción
