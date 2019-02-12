@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2019-02-12 Tue 20:05 -->
+<!-- 2019-02-12 Tue 20:59 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Intro Hacking Binarios en Linux</title>
@@ -253,19 +253,26 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org298320d">1. Sesiones</a></li>
-<li><a href="#org8d711bf">2. Introducción</a></li>
-<li><a href="#orgbdbd357">3. Requisitos previos</a></li>
-<li><a href="#org2b79f66">4. Instalaciones</a>
+<li><a href="#orgb025819">1. Sesiones</a></li>
+<li><a href="#orgab02e13">2. Introducción</a></li>
+<li><a href="#org818012f">3. Requisitos previos</a></li>
+<li><a href="#orge4091b5">4. Instalaciones</a>
 <ul>
-<li><a href="#org54499df">4.1. Herramientas de desarrollo</a></li>
-<li><a href="#org821bfba">4.2. Pwndbg</a></li>
-<li><a href="#orga6a61b7">4.3. Radare2</a></li>
-<li><a href="#org1fd29f1">4.4. Otros</a></li>
+<li><a href="#org71e3889">4.1. Herramientas de desarrollo</a></li>
+<li><a href="#org261bec8">4.2. Pwndbg</a></li>
+<li><a href="#org1e1d717">4.3. Radare2</a></li>
+<li><a href="#org413b2d1">4.4. Otros</a></li>
 </ul>
 </li>
-<li><a href="#org84b95bd">5. Como compilar binarios para análisis</a></li>
-<li><a href="#org283839f">6. Radare2 cheatsheet</a></li>
+<li><a href="#org40a3541">5. Como compilar binarios para análisis</a></li>
+<li><a href="#orgc0165f7">6. Radare2 cheatsheet</a>
+<ul>
+<li><a href="#orgb1dfeaa">6.1. Posicionamiento</a></li>
+<li><a href="#orgab01ded">6.2. Información</a></li>
+<li><a href="#org25ad194">6.3. Análisis</a></li>
+<li><a href="#org61aa135">6.4. Print</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -274,8 +281,8 @@ for the JavaScript code in this tag.
 <p><img src="./img.png" alt="img.png" />
 </p>
 </div>
-<div id="outline-container-org298320d" class="outline-2">
-<h2 id="org298320d"><span class="section-number-2">1</span> Sesiones</h2>
+<div id="outline-container-orgb025819" class="outline-2">
+<h2 id="orgb025819"><span class="section-number-2">1</span> Sesiones</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Inscripciones en Delegación
@@ -320,8 +327,8 @@ Inscripciones en Delegación
 </div>
 
 
-<div id="outline-container-org8d711bf" class="outline-2">
-<h2 id="org8d711bf"><span class="section-number-2">2</span> Introducción</h2>
+<div id="outline-container-orgab02e13" class="outline-2">
+<h2 id="orgab02e13"><span class="section-number-2">2</span> Introducción</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 El cursillo consistirá en dos sesiones, una de introducción mas
@@ -348,8 +355,8 @@ como <a href="https://github.com/pwndbg/pwndbg">pwndbg</a> para ahorrar tiempo y
 </div>
 </div>
 
-<div id="outline-container-orgbdbd357" class="outline-2">
-<h2 id="orgbdbd357"><span class="section-number-2">3</span> Requisitos previos</h2>
+<div id="outline-container-org818012f" class="outline-2">
+<h2 id="org818012f"><span class="section-number-2">3</span> Requisitos previos</h2>
 <div class="outline-text-2" id="text-3">
 <ul class="org-ul">
 <li>Saber un poco de programación en C</li>
@@ -360,12 +367,12 @@ como <a href="https://github.com/pwndbg/pwndbg">pwndbg</a> para ahorrar tiempo y
 </div>
 </div>
 
-<div id="outline-container-org2b79f66" class="outline-2">
-<h2 id="org2b79f66"><span class="section-number-2">4</span> Instalaciones</h2>
+<div id="outline-container-orge4091b5" class="outline-2">
+<h2 id="orge4091b5"><span class="section-number-2">4</span> Instalaciones</h2>
 <div class="outline-text-2" id="text-4">
 </div>
-<div id="outline-container-org54499df" class="outline-3">
-<h3 id="org54499df"><span class="section-number-3">4.1</span> Herramientas de desarrollo</h3>
+<div id="outline-container-org71e3889" class="outline-3">
+<h3 id="org71e3889"><span class="section-number-3">4.1</span> Herramientas de desarrollo</h3>
 <div class="outline-text-3" id="text-4-1">
 <div class="org-src-container">
 <pre class="src src-sh">sudo apt update
@@ -376,8 +383,8 @@ sudo apt install build-essential git
 </div>
 </div>
 
-<div id="outline-container-org821bfba" class="outline-3">
-<h3 id="org821bfba"><span class="section-number-3">4.2</span> Pwndbg</h3>
+<div id="outline-container-org261bec8" class="outline-3">
+<h3 id="org261bec8"><span class="section-number-3">4.2</span> Pwndbg</h3>
 <div class="outline-text-3" id="text-4-2">
 <div class="org-src-container">
 <pre class="src src-sh">git clone https://github.com/pwndbg/pwndbg.git
@@ -389,8 +396,8 @@ sudo apt install build-essential git
 </div>
 </div>
 
-<div id="outline-container-orga6a61b7" class="outline-3">
-<h3 id="orga6a61b7"><span class="section-number-3">4.3</span> Radare2</h3>
+<div id="outline-container-org1e1d717" class="outline-3">
+<h3 id="org1e1d717"><span class="section-number-3">4.3</span> Radare2</h3>
 <div class="outline-text-3" id="text-4-3">
 <div class="org-src-container">
 <pre class="src src-sh">git clone https://github.com/radare/radare2.git
@@ -402,8 +409,8 @@ sys/install.sh
 </div>
 </div>
 
-<div id="outline-container-org1fd29f1" class="outline-3">
-<h3 id="org1fd29f1"><span class="section-number-3">4.4</span> Otros</h3>
+<div id="outline-container-org413b2d1" class="outline-3">
+<h3 id="org413b2d1"><span class="section-number-3">4.4</span> Otros</h3>
 <div class="outline-text-3" id="text-4-4">
 <div class="org-src-container">
 <pre class="src src-sh">mkdir talleres
@@ -416,8 +423,8 @@ https://github.com/ZenTauro/intro_exploiting_binarios.git
 </div>
 </div>
 
-<div id="outline-container-org84b95bd" class="outline-2">
-<h2 id="org84b95bd"><span class="section-number-2">5</span> Como compilar binarios para análisis</h2>
+<div id="outline-container-org40a3541" class="outline-2">
+<h2 id="org40a3541"><span class="section-number-2">5</span> Como compilar binarios para análisis</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 En el directorio donde estén los archivos .c ejecutamos:
@@ -430,9 +437,55 @@ En el directorio donde estén los archivos .c ejecutamos:
 </div>
 </div>
 
-<div id="outline-container-org283839f" class="outline-2">
-<h2 id="org283839f"><span class="section-number-2">6</span> Radare2 cheatsheet</h2>
+<div id="outline-container-orgc0165f7" class="outline-2">
+<h2 id="orgc0165f7"><span class="section-number-2">6</span> Radare2 cheatsheet</h2>
 <div class="outline-text-2" id="text-6">
+</div>
+<div id="outline-container-orgb1dfeaa" class="outline-3">
+<h3 id="orgb1dfeaa"><span class="section-number-3">6.1</span> Posicionamiento</h3>
+<div class="outline-text-3" id="text-6-1">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Comando</th>
+<th scope="col" class="org-left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">s dirección</td>
+<td class="org-left">Mover el cursor a la dirección</td>
+</tr>
+
+<tr>
+<td class="org-left">s-n</td>
+<td class="org-left">Mover n bytes hacia atrás</td>
+</tr>
+
+<tr>
+<td class="org-left">s-</td>
+<td class="org-left">Deshacer <code>s</code></td>
+</tr>
+
+<tr>
+<td class="org-left">s+</td>
+<td class="org-left">Rehacer <code>s</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-orgab01ded" class="outline-3">
+<h3 id="orgab01ded"><span class="section-number-3">6.2</span> Información</h3>
+<div class="outline-text-3" id="text-6-2">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -460,31 +513,101 @@ En el directorio donde estén los archivos .c ejecutamos:
 
 <tr>
 <td class="org-left">iz</td>
-<td class="org-left">Información strings</td>
+<td class="org-left">Información strings en sección .data</td>
 </tr>
 
+<tr>
+<td class="org-left">iI</td>
+<td class="org-left">Información sobre el archivo</td>
+</tr>
+
+<tr>
+<td class="org-left">ii</td>
+<td class="org-left">Simbolos importados</td>
+</tr>
+
+<tr>
+<td class="org-left">il</td>
+<td class="org-left">Librerías enlazadas</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-org25ad194" class="outline-3">
+<h3 id="org25ad194"><span class="section-number-3">6.3</span> Análisis</h3>
+<div class="outline-text-3" id="text-6-3">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Comando</th>
+<th scope="col" class="org-left">Descripción</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td class="org-left">aaa</td>
 <td class="org-left">Analisis nivel 3</td>
 </tr>
 
 <tr>
-<td class="org-left">s</td>
-<td class="org-left">"Seek" dirección en el binario</td>
+<td class="org-left">axt</td>
+<td class="org-left">Buscar referencias a la dirección actual</td>
 </tr>
 
 <tr>
+<td class="org-left">afi</td>
+<td class="org-left">Información sobre función actual</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-org61aa135" class="outline-3">
+<h3 id="org61aa135"><span class="section-number-3">6.4</span> Print</h3>
+<div class="outline-text-3" id="text-6-4">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Comando</th>
+<th scope="col" class="org-left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
 <td class="org-left">pdf</td>
 <td class="org-left">Enseñar Función desensamblada</td>
+</tr>
+
+<tr>
+<td class="org-left">p=</td>
+<td class="org-left">ASCII entropía</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 </div>
+</div>
 <div id="postamble" class="status">
 <p class="author">Author: ZenTauro</p>
-<p class="date">Created: 2019-02-12 Tue 20:05</p>
+<p class="date">Created: 2019-02-12 Tue 20:59</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
