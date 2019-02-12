@@ -1,5 +1,5 @@
 #+TITLE: Intro Hacking Binarios en Linux
-#+AUTHOR: Pedro Gomez
+#+AUTHOR: ZenTauro
 #+SETUPFILE: https://fniessen.github.io/org-html-themes/setup/theme-readtheorg.setup
 
 [[./img.png]]
@@ -63,8 +63,7 @@
   #+BEGIN_SRC sh
     mkdir talleres
     cd talleres
-    git clone https://github.com/ZenTauro/crackme.git
-    git clone https://github.com/ZenTauro/ejemplo_c.git
+    https://github.com/ZenTauro/intro_exploiting_binarios.git
     cd ..
   #+END_SRC
 
@@ -72,7 +71,7 @@
   En el directorio donde estén los archivos .c ejecutamos:
   (tenemos que sustituir ejemplo.c con el nombre del programa)
   #+BEGIN_SRC sh
-  gcc -m32 -fno-stack-protector ejemplo.c -o ejemplo
+  gcc -m32 -fno-stack-protector -O0 ejemplo.c -o ejemplo
   #+END_SRC
 
 * Radare2 cheatsheet
