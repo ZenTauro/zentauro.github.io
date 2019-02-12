@@ -75,11 +75,34 @@
   #+END_SRC
 
 * Radare2 cheatsheet
- | Comando | Descripción                                 |
- |---------+---------------------------------------------|
- | i       | Información                                 |
- | iS=     | Información Secciones del Binario con ASCII |
- | iz      | Información strings                         |
- | aaa     | Analisis nivel 3                            |
- | s       | "Seek" dirección en el binario              |
- | pdf     | Enseñar Función desensamblada               |
+** Posicionamiento
+   | Comando     | Descripción                    |
+   |-------------+--------------------------------|
+   | s dirección | Mover el cursor a la dirección |
+   | s-n         | Mover n bytes hacia atrás      |
+   | s-          | Deshacer ~s~                   |
+   | s+          | Rehacer ~s~                    |
+
+** Información
+
+   | Comando | Descripción                                 |
+   |---------+---------------------------------------------|
+   | i       | Información                                 |
+   | iS=     | Información Secciones del Binario con ASCII |
+   | iz      | Información strings en sección .data        |
+   | iI      | Información sobre el archivo                |
+   | ii      | Simbolos importados                         |
+   | il      | Librerías enlazadas                         |
+
+** Análisis
+   | Comando | Descripción                              |
+   |---------+------------------------------------------|
+   | aaa     | Analisis nivel 3                         |
+   | axt     | Buscar referencias a la dirección actual |
+   | afi     | Información sobre función actual         |
+
+** Print
+   | Comando | Descripción                   |
+   |---------+-------------------------------|
+   | pdf     | Enseñar Función desensamblada |
+   | p=      | ASCII entropía                |
