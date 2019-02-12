@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2019-02-04 Mon 11:24 -->
+<!-- 2019-02-12 Tue 14:52 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Intro Hacking Binarios en Linux</title>
@@ -253,16 +253,19 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org8f5611c">1. Sesiones</a></li>
-<li><a href="#org1cc5544">2. Introducción</a></li>
-<li><a href="#orga6721d7">3. Requisitos previos</a></li>
-<li><a href="#org051484c">4. Instalación de las herramientas</a>
+<li><a href="#org3346295">1. Sesiones</a></li>
+<li><a href="#orgf8c82af">2. Introducción</a></li>
+<li><a href="#orga843225">3. Requisitos previos</a></li>
+<li><a href="#org71bb9cc">4. Instalaciones</a>
 <ul>
-<li><a href="#org3c815e7">4.1. Herramientas de desarrollo</a></li>
-<li><a href="#orga2809f6">4.2. Pwndbg</a></li>
-<li><a href="#org323dd62">4.3. Radare2</a></li>
+<li><a href="#org8b76ae2">4.1. Herramientas de desarrollo</a></li>
+<li><a href="#org3fe6c9e">4.2. Pwndbg</a></li>
+<li><a href="#org560a52d">4.3. Radare2</a></li>
+<li><a href="#org8231d2a">4.4. Otros</a></li>
 </ul>
 </li>
+<li><a href="#org0f7945c">5. Como compilar binarios para análisis</a></li>
+<li><a href="#org7783cb5">6. Radare2 cheatsheet</a></li>
 </ul>
 </div>
 </div>
@@ -271,8 +274,8 @@ for the JavaScript code in this tag.
 <p><img src="./img.png" alt="img.png" />
 </p>
 </div>
-<div id="outline-container-org8f5611c" class="outline-2">
-<h2 id="org8f5611c"><span class="section-number-2">1</span> Sesiones</h2>
+<div id="outline-container-org3346295" class="outline-2">
+<h2 id="org3346295"><span class="section-number-2">1</span> Sesiones</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Inscripciones en Delegación
@@ -317,8 +320,8 @@ Inscripciones en Delegación
 </div>
 
 
-<div id="outline-container-org1cc5544" class="outline-2">
-<h2 id="org1cc5544"><span class="section-number-2">2</span> Introducción</h2>
+<div id="outline-container-orgf8c82af" class="outline-2">
+<h2 id="orgf8c82af"><span class="section-number-2">2</span> Introducción</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 El cursillo consistirá en dos sesiones, una de introducción mas
@@ -345,23 +348,24 @@ como <a href="https://github.com/pwndbg/pwndbg">pwndbg</a> para ahorrar tiempo y
 </div>
 </div>
 
-<div id="outline-container-orga6721d7" class="outline-2">
-<h2 id="orga6721d7"><span class="section-number-2">3</span> Requisitos previos</h2>
+<div id="outline-container-orga843225" class="outline-2">
+<h2 id="orga843225"><span class="section-number-2">3</span> Requisitos previos</h2>
 <div class="outline-text-2" id="text-3">
 <ul class="org-ul">
 <li>Saber un poco de programación en C</li>
 <li>Tener un Linux instalado (ya sea en maquina virtual o disco)</li>
 <li>Ganas de aprender</li>
+<li>Clonar los repositorios</li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org051484c" class="outline-2">
-<h2 id="org051484c"><span class="section-number-2">4</span> Instalación de las herramientas</h2>
+<div id="outline-container-org71bb9cc" class="outline-2">
+<h2 id="org71bb9cc"><span class="section-number-2">4</span> Instalaciones</h2>
 <div class="outline-text-2" id="text-4">
 </div>
-<div id="outline-container-org3c815e7" class="outline-3">
-<h3 id="org3c815e7"><span class="section-number-3">4.1</span> Herramientas de desarrollo</h3>
+<div id="outline-container-org8b76ae2" class="outline-3">
+<h3 id="org8b76ae2"><span class="section-number-3">4.1</span> Herramientas de desarrollo</h3>
 <div class="outline-text-3" id="text-4-1">
 <div class="org-src-container">
 <pre class="src src-sh">sudo apt update
@@ -372,8 +376,8 @@ sudo apt install build-essential git
 </div>
 </div>
 
-<div id="outline-container-orga2809f6" class="outline-3">
-<h3 id="orga2809f6"><span class="section-number-3">4.2</span> Pwndbg</h3>
+<div id="outline-container-org3fe6c9e" class="outline-3">
+<h3 id="org3fe6c9e"><span class="section-number-3">4.2</span> Pwndbg</h3>
 <div class="outline-text-3" id="text-4-2">
 <div class="org-src-container">
 <pre class="src src-sh">git clone https://github.com/pwndbg/pwndbg.git
@@ -385,23 +389,103 @@ sudo apt install build-essential git
 </div>
 </div>
 
-<div id="outline-container-org323dd62" class="outline-3">
-<h3 id="org323dd62"><span class="section-number-3">4.3</span> Radare2</h3>
+<div id="outline-container-org560a52d" class="outline-3">
+<h3 id="org560a52d"><span class="section-number-3">4.3</span> Radare2</h3>
 <div class="outline-text-3" id="text-4-3">
 <div class="org-src-container">
 <pre class="src src-sh">git clone https://github.com/radare/radare2.git
 <span style="color: #F92672;">cd</span> radare2
-python ./sys/meson.py --prefix=/usr --shared --install
+sys/install.sh
+<span style="color: #F92672;">cd</span> ..
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org8231d2a" class="outline-3">
+<h3 id="org8231d2a"><span class="section-number-3">4.4</span> Otros</h3>
+<div class="outline-text-3" id="text-4-4">
+<div class="org-src-container">
+<pre class="src src-sh">mkdir talleres
+<span style="color: #F92672;">cd</span> talleres
+git clone https://github.com/ZenTauro/crackme.git
+git clone https://github.com/ZenTauro/ejemplo_c.git
 <span style="color: #F92672;">cd</span> ..
 </pre>
 </div>
 </div>
 </div>
 </div>
+
+<div id="outline-container-org0f7945c" class="outline-2">
+<h2 id="org0f7945c"><span class="section-number-2">5</span> Como compilar binarios para análisis</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+En el directorio donde estén los archivos .c ejecutamos:
+(tenemos que sustituir ejemplo.c con el nombre del programa)
+</p>
+<div class="org-src-container">
+<pre class="src src-sh">gcc -m32 -fno-stack-protector ejemplo.c -o ejemplo
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org7783cb5" class="outline-2">
+<h2 id="org7783cb5"><span class="section-number-2">6</span> Radare2 cheatsheet</h2>
+<div class="outline-text-2" id="text-6">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Comando</th>
+<th scope="col" class="org-left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">i</td>
+<td class="org-left">Información</td>
+</tr>
+
+<tr>
+<td class="org-left">iS=</td>
+<td class="org-left">Información Secciones del Binario con ASCII</td>
+</tr>
+
+<tr>
+<td class="org-left">iz</td>
+<td class="org-left">Información strings</td>
+</tr>
+
+<tr>
+<td class="org-left">aaa</td>
+<td class="org-left">Analisis nivel 3</td>
+</tr>
+
+<tr>
+<td class="org-left">s</td>
+<td class="org-left">"Seek" dirección en el binario</td>
+</tr>
+
+<tr>
+<td class="org-left">pdf</td>
+<td class="org-left">Enseñar Función desensamblada</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Pedro Gomez</p>
-<p class="date">Created: 2019-02-04 Mon 11:24</p>
+<p class="date">Created: 2019-02-12 Tue 14:52</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

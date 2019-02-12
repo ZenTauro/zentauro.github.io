@@ -33,8 +33,9 @@
   - Saber un poco de programación en C
   - Tener un Linux instalado (ya sea en maquina virtual o disco)
   - Ganas de aprender
+  - Clonar los repositorios
 
-* Instalación de las herramientas
+* Instalaciones
 ** Herramientas de desarrollo
   #+BEGIN_SRC sh
     sudo apt update
@@ -54,6 +55,32 @@
   #+BEGIN_SRC sh
     git clone https://github.com/radare/radare2.git
     cd radare2
-    python ./sys/meson.py --prefix=/usr --shared --install
+    sys/install.sh
     cd ..
   #+END_SRC
+
+** Otros
+  #+BEGIN_SRC sh
+    mkdir talleres
+    cd talleres
+    git clone https://github.com/ZenTauro/crackme.git
+    git clone https://github.com/ZenTauro/ejemplo_c.git
+    cd ..
+  #+END_SRC
+
+* Como compilar binarios para análisis
+  En el directorio donde estén los archivos .c ejecutamos:
+  (tenemos que sustituir ejemplo.c con el nombre del programa)
+  #+BEGIN_SRC sh
+  gcc -m32 -fno-stack-protector ejemplo.c -o ejemplo
+  #+END_SRC
+
+* Radare2 cheatsheet
+ | Comando | Descripción                                 |
+ |---------+---------------------------------------------|
+ | i       | Información                                 |
+ | iS=     | Información Secciones del Binario con ASCII |
+ | iz      | Información strings                         |
+ | aaa     | Analisis nivel 3                            |
+ | s       | "Seek" dirección en el binario              |
+ | pdf     | Enseñar Función desensamblada               |
