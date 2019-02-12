@@ -10,7 +10,6 @@
  | Intro     | Martes 12 Febrero 2019 | 12 - 14 | 15 - 17 |
  | Taller    | Martes 19 Febrero 2019 | 12 - 14 | 15 - 17 |
 
-
 * Introducción
   El cursillo consistirá en dos sesiones, una de introducción mas
   teórica y otra de un taller donde utilizaremos los conocimientos
@@ -59,7 +58,7 @@
     cd ..
   #+END_SRC
 
-** Otros
+** Archivos para el taller
   #+BEGIN_SRC sh
     mkdir talleres
     cd talleres
@@ -75,6 +74,7 @@
   #+END_SRC
 
 * Radare2 cheatsheet
+  [[https://github.com/radare/radare2/blob/master/doc/intro.md][CheatSheet oficial]]
 ** Posicionamiento
    | Comando     | Descripción                    |
    |-------------+--------------------------------|
@@ -106,3 +106,7 @@
    |---------+-------------------------------|
    | pdf     | Enseñar Función desensamblada |
    | p=      | ASCII entropía                |
+
+* Enlaces interesantes
+  - [[https://www.megabeets.net][MegaBeets]]
+  - [[https://liveoverflow.com/index.html][Live Overflow]]
